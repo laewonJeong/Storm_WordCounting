@@ -20,7 +20,7 @@
 # Storm Topology
 ![image](https://user-images.githubusercontent.com/81546637/132097540-8336d938-4d63-4467-a59b-24887da1c30f.png)
 - ### DataStream, Spout, Bolt로 구성
-- Hadoop과 같은 배치 처리 시스템의 Job과 거의 비슷
+- ### Hadoop과 같은 배치 처리 시스템의 Job과 거의 비슷
   - But, StormTopology는 kill 하거나 undeploy할 때까지 계속 동작 
 - ### DataStream
   - 스톰의 기본 데이터 구조체: Tuple
