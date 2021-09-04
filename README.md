@@ -12,7 +12,7 @@
   - 데이터 처리 프로그램 단위
   - 데이터의 흐름을 정의
   - 데이터 변환을 구현
-  - 물리적으로 jar 파일 형태로 클러스터에 전송
+  - 물리적으로 ***jar*** 파일 형태로 클러스터에 전송
 - ### Cluster
   - 토폴로지를 실행
   - 다수의 JVM에서 토폴로지의 작업을 병렬 실행
@@ -21,7 +21,7 @@
 ![image](https://user-images.githubusercontent.com/81546637/132097540-8336d938-4d63-4467-a59b-24887da1c30f.png)
 - ### DataStream, Spout, Bolt로 구성
 - ### Hadoop과 같은 배치 처리 시스템의 Job과 거의 비슷
-  - But, StormTopology는 kill 하거나 undeploy할 때까지 계속 동작 
+  - But, StormTopology는 ***kill*** 하거나 ***undeploy*** 할 때까지 계속 동작 
 - ### DataStream
   - 스톰의 기본 데이터 구조체: Tuple
   - Tuple = 네임드 벨류의 목록
