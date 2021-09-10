@@ -1,4 +1,4 @@
-# Apache Storm
+# **Apache Storm**
 - ### 데이터의 스트림을 처리하는 시스템
   - 실시간 데이터 처리 목적
 - ### 주요 특징
@@ -7,7 +7,7 @@
   - 안전성
   - 내고장성(fault-tolerant)
 ---
-# Topology/Cluster
+# **Topology/Cluster**
 - ### Topology
   - 데이터 처리 프로그램 단위
   - 데이터의 흐름을 정의
@@ -17,7 +17,7 @@
   - 토폴로지를 실행
   - 다수의 JVM에서 토폴로지의 작업을 병렬 실행
 ---
-# Storm Topology
+# **Storm Topology**
 ![image](https://user-images.githubusercontent.com/81546637/132097540-8336d938-4d63-4467-a59b-24887da1c30f.png)
 - ### DataStream, Spout, Bolt로 구성
 - ### Hadoop과 같은 배치 처리 시스템의 Job과 거의 비슷
@@ -36,7 +36,7 @@
   - Spout나 다른 Bolt로 부터 Stream을 받음
   - 데이터를 처리해서 다른 Bolt에 전달하거나 외부에 저장
 ---
-# Storm Parallelism
+# **Storm Parallelism**
 - ### 스톰은 연산을 다수의 장비를 이용해 선형적으로 확장할 수 있음
   - 다수의 작고 독립적인 task로 나누고 cluster 전체에 나누어 병렬을 처리할 수 있기 때문
 - ### Major Component in Storm Cluster to execute Topology
@@ -53,7 +53,7 @@
     - 기본적으로 각 Executor는 한 개의 작업 단위만 할당 받음
   - ### Task(Bolt/Spoutinstance)
 ---
-# Storm Cluster
+# **Storm Cluster**
 ![image](https://user-images.githubusercontent.com/81546637/132098059-cacef3ca-4757-4309-b448-53ec9f1b2ffb.png)
 - ### Storm Cluster는 Hadoop Cluster와 같이 Master/Slaves 구조를 따르지만 조금 다름
 - ### There are two kinds of nodes on a Storm Cluster
@@ -74,4 +74,20 @@
 - ### Zookeeper
   - 몇가지 기본 기능과 그룹 기능을 제공하는 분산환경용 중앙 정보 저장소 서비스
   - 클러스터 내의 님버스와 수퍼바이저 간에 작업단위 할당 정보, 워커 상태 정보, 토폴로지 메트릭 같은 상태 정보를 공유하기 위해 주키퍼를 사용        
+---
+# ***WordCounting Example in Apache Storm***
+![image](https://user-images.githubusercontent.com/81546637/132815503-d4b5f776-323b-4384-9a6a-a7c761e60ead.png)
+- ### Sentence Spout
+  - {"sentence":"my dog has fleas"}
+- ### Split Sentence Bolt
+  - 문장 생성 스파우트가 보내느 스트림을 받음
+  - sentence인 키를 찾아 단어로 쪼갬
+  - {"word":"my"}
+- ### Word Count Bolt
+  - Split Sentence Bolt가 보낸 Tuple을 받음
+  - 단어의 수 집계
+  - {"word":"dog","count":5}
+- ### Report Bolt
+  - 단어 세기 볼트의 결과를 받아 테이블 형태로 유지
+  - 콘솔로 내용 출력        
 ---
